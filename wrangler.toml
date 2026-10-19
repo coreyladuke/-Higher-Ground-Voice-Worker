@@ -1,0 +1,9 @@
+name = "higher-ground-voice-test"
+main = "voice-worker.mjs"
+compatibility_date = "2026-10-19"
+workers_dev = true
+
+[ai]
+binding = "AI"
+# Set private test code using: npx wrangler secret put HG_VOICE_TOKEN
+# Do not put secrets in this file, HTML, or GitHub.
