@@ -16,7 +16,7 @@ export default {async fetch(req, env){
  if(path==='/health'&&req.method==='GET')return reply(req,{ready:!!env.AI?.run,model:'whisper-large-v3-turbo',prototype:true});
  if(path!=='/v1/transcribe'||req.method!=='POST')return reply(req,{error:'Not found'},404);
  const secret=String(env.HG_VOICE_TOKEN||'');
- if(secret.length<24||req.headers.get('Authorization')!==`Bearer ${secret}`)return reply(req,{error:'Incorrect private test code. Configure HG_VOICE_TOKEN in Cloudflare.'},401);
+ if(secret.length<16||req.headers.get('Authorization')!==`Bearer ${secret}`)return reply(req,{error:'Incorrect private test code. Configure HG_VOICE_TOKEN in Cloudflare.'},401);
  if(!env.AI?.run)return reply(req,{error:'Workers AI binding AI is missing. Add AI binding in Cloudflare Worker settings.'},503);
  const type=(req.headers.get('Content-Type')||'').split(';')[0].toLowerCase().trim();
  if(!TYPES.includes(type))return reply(req,{error:'Unsupported recording format: '+type},415);
