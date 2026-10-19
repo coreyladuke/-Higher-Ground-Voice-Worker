@@ -10,3 +10,4 @@ Do not try to select and paste 3,000 characters into the Cloudflare editor on an
 6. The existing test page transcribe-check.html must still be added to the GitHub Pages website. Set the private code and worker URL in that page to test, after user explicitly consents to send audio.
 
 The source implements a single small prototype speech-to-text endpoint: POST /v1/transcribe and GET /health, requires GitHub Pages origin and a private test code, and has a 3.5 MB audio cap. No live Cloudflare inference has been tested yet. Do not expose your secret to anyone.
+    Trigger first Higher Ground Cloudflare deployment
