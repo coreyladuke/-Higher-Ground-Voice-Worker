@@ -1,5 +1,5 @@
 name = "higher-ground-voice-test"
-main = "voice-worker3.mjs"
+main = "voice-worker 3.mjs"
 compatibility_date = "2026-10-19"
 workers_dev = true
 
